@@ -1,11 +1,12 @@
 package com.example.springsecurity.student;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("management/api/v1/students")
 public class StudentManagementController {
     private static final List<Student> STUDENTS = Arrays.asList(
