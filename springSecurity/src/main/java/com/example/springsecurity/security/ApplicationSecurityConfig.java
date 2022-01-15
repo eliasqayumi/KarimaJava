@@ -27,6 +27,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()//To do;
                 .authorizeRequests()
                 .antMatchers("/", "index", "/css/*", "/js/*").permitAll()
                 .antMatchers("/api/**").hasRole(STUDENT.name())
@@ -39,16 +40,19 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     @Bean
     protected UserDetailsService userDetailsService() {
+
         UserDetails annaSmith = User.builder()
                 .username("annasmith")
                 .password(passwordEncoder.encode("password"))  // PASSWORD
                 .roles(STUDENT.name())   //ROLE STUDENT
                 .build();
+
         UserDetails linda = User.builder()
                 .username("linda")
                 .password(passwordEncoder.encode("12345"))
                 .roles(ADMIN.name())
                 .build();
+
         UserDetails tom =
                 User.builder()
                 .username("tom")
@@ -56,12 +60,10 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .roles(ADMINTRAINEE.name())
                 .build();
 
-
         return new InMemoryUserDetailsManager(
                 annaSmith,
                 linda,
                 tom
         );
-
     }
 }
