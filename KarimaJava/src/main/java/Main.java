@@ -1,30 +1,22 @@
-package com.example.karimafullrest.controller;
-
-import com.example.karimafullrest.model.Data;
-import com.example.karimafullrest.model.DataFile;
-import com.example.karimafullrest.model.Vehicles;
-import com.example.karimafullrest.service.DataFileService;
-import com.example.karimafullrest.service.VehiclesService;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.web.bind.annotation.*;
 
+import javax.xml.crypto.Data;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
-public class ApplicationController {
-    private VehiclesService vehiclesService;
+public class Main {
+    private List<Vehicles> dataList = new ArrayList<Vehicles>();
 
-    public ApplicationController(VehiclesService vehiclesService) {
-        this.vehiclesService = vehiclesService;
+    public static void main(String[] args) {
+        Main main = new Main();
+        main.fetchingData();
+
     }
 
-    @PostMapping("/post")
-    public void post() {
-        List<Vehicles> dataList = new ArrayList<>();
+    private  void fetchingData() {
         String excelPath = "/Users/qayumi/Desktop/All_Codes/spring-security/KarimaJava/vehicles.xlsx";
         try {
             FileInputStream inputStream = new FileInputStream(excelPath);
@@ -34,8 +26,8 @@ public class ApplicationController {
             System.out.println(rowNum);
             int columnNum = sheet.getRow(0).getLastCellNum();
             System.out.println(columnNum);
-            for (int i = 1; i < 5000; i++) {
-                Vehicles vehicle = new Vehicles(
+            for (int i = 1; i < rowNum; i++) {
+                dataList.add(new Vehicles(
                         String.valueOf(sheet.getRow(i).getCell(0).toString()),
                         String.valueOf(sheet.getRow(i).getCell(1).toString()),
                         String.valueOf(sheet.getRow(i).getCell(2).toString()),
@@ -43,17 +35,11 @@ public class ApplicationController {
                         String.valueOf(sheet.getRow(i).getCell(4).toString()),
                         String.valueOf(sheet.getRow(i).getCell(5).toString()),
                         String.valueOf(sheet.getRow(i).getCell(6).toString())
-                );
-                vehiclesService.save(vehicle);
+                ));
+                System.out.println(i);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-    @GetMapping("/getAll")
-    public List<Vehicles> getAll() {
-        return vehiclesService.finAll();
-    }
-
 }

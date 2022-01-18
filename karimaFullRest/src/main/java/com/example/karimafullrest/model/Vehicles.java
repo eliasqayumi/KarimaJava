@@ -13,10 +13,11 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class Vehicles {
     @Id
+    private String id;
     private String plateNumber;
-    private int firstRegistration;
-    private double purchasePrice;
+    private String firstRegistration;
+    private String purchasePrice;
     private String producer;
-    private double mileage;
-    private double previewsIndemnity;
+    private String mileage;
+    private String previewsIndemnity;
 }
