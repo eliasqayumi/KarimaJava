@@ -6,12 +6,26 @@ public class Vehicles {
     private String producer;
     private String mileage;
     private String previewsIndemnity;
+    private String annualFee;
+    private String manualFee;
+
 
     public Vehicles() {
-
     }
 
-    public Vehicles(String count,String plateNumber, String firstRegistration, String purchasePrice, String producer, String mileage, String previewsIndemnity) {
+    public Vehicles(String count, String plateNumber, String firstRegistration, String purchasePrice, String producer, String mileage, String previewsIndemnity, String annualFee, String manualFee) {
+        this.count = count;
+        this.plateNumber = plateNumber;
+        this.firstRegistration = firstRegistration;
+        this.purchasePrice = purchasePrice;
+        this.producer = producer;
+        this.mileage = mileage;
+        this.previewsIndemnity = previewsIndemnity;
+        this.annualFee = annualFee;
+        this.manualFee = manualFee;
+    }
+
+    public Vehicles(String count, String plateNumber, String firstRegistration, String purchasePrice, String producer, String mileage, String previewsIndemnity) {
         this.count=count;
         this.plateNumber = plateNumber;
         this.firstRegistration = firstRegistration;
@@ -19,6 +33,24 @@ public class Vehicles {
         this.producer = producer;
         this.mileage = mileage;
         this.previewsIndemnity = previewsIndemnity;
+        this.annualFee="";
+        this.manualFee="";
+    }
+
+    public String getAnnualFee() {
+        return annualFee;
+    }
+
+    public void setAnnualFee(String annualFee) {
+        this.annualFee = annualFee;
+    }
+
+    public String getManualFee() {
+        return manualFee;
+    }
+
+    public void setManualFee(String manualFee) {
+        this.manualFee = manualFee;
     }
 
     public String getCount() {
