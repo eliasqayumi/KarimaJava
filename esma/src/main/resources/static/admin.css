@@ -1,0 +1,95 @@
+body {
+    background: #0c5460;
+}
+
+.container {
+    width: 98%;
+    margin: 50px auto;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 0.1em 0.1em red, 0 0 0.3em 0.3em white;
+}
+
+.contain {
+    display: flex;
+}
+
+.wrap {
+    width: 47%;
+    margin: 10px auto;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 0.1em 0.1em royalblue, 0 0 0.3em 0.3em white;
+    background: white;
+}
+
+.title {
+    font-size: 2em;
+    text-align: center;
+}
+
+table tr th {
+    box-shadow: 0 -0.1em 0.2em 0 royalblue;
+    border-radius: 4px 4px 0 0;
+    padding: .5em;
+}
+
+table {
+    margin-top: 1em;
+    width: 100%;
+}
+
+table tr {
+    box-shadow: 0 0 0.2em 0 gray;
+    border-radius: 0 0 4px 4px;
+}
+
+table tr td {
+    padding: .5em;
+}
+
+.add {
+    border-radius: 2px;
+    padding: .7em;
+    box-shadow: 0 0 0.2em royalblue;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    transition: 300ms;
+}
+.add:hover {
+    box-shadow:none;
+    color: white;
+    background: royalblue;
+}
+.updateBttn{
+    border-radius: 2px;
+    padding: .7em;
+    box-shadow: 0 0 0.2em 0.1em Green;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+
+    transition: 300ms;
+}
+.deleteBttn{
+    margin-left: 5px;
+    border-radius: 2px;
+    padding: .7em;
+    box-shadow: 0 0 0.2em 0.1em Red;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+
+    transition: 300ms;
+}
+.updateBttn:hover {
+    color: white;
+    background: #1A962A;
+    box-shadow: none;
+}
+.deleteBttn:hover {
+    color: white;
+    box-shadow: none;
+    background: #D11A2A;
+}

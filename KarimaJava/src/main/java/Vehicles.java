@@ -8,6 +8,7 @@ public class Vehicles {
     private String previewsIndemnity;
 
     public Vehicles() {
+
     }
 
     public Vehicles(String count,String plateNumber, String firstRegistration, String purchasePrice, String producer, String mileage, String previewsIndemnity) {

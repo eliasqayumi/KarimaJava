@@ -1,0 +1,23 @@
+body{
+ background: #0c5460;
+}
+.container{
+    width: 90%;
+    margin: 50px auto;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 0.1em 0.1em red, 0 0 0.3em 0.3em white;
+    display: grid;
+
+}
+.wrap{
+    width: 90%;
+    margin: 10px auto;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 0.1em 0.1em royalblue, 0 0 0.3em 0.3em white;
+    background: white;
+}
+.title{
+    font-size: 2em;
+}
