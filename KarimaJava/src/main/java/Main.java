@@ -9,7 +9,6 @@ public class Main {
         for (Vehicles vehicles : dataFetching.getDataList()) {
             System.out.println("Plate Number " + vehicles.getPlateNumber() + " Producer " + vehicles.getProducer() +
                     " Annual fee " + vehicles.getAnnualFee() + " manual fee " + vehicles.getManualFee());
-            ;
         }
     }
 
