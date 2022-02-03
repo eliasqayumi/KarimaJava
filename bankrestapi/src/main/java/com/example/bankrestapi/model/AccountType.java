@@ -15,7 +15,7 @@ import javax.persistence.Id;
 public class AccountType {
     @Id
     @Column(name = "account_type_id", nullable = false)
-    private long accountTypeId;
+    private Long accountTypeId;
     @Column(name = "account_type", nullable = false)
     private String accountType;
 }

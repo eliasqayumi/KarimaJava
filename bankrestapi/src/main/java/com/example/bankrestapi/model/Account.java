@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 public class Account {
     @Id
     @Column(name = "account_id", nullable = false)
-    private long accountId;
+    private Long accountId;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
@@ -26,8 +26,8 @@ public class Account {
 
     @Column(name = "account_number", nullable = false)
     @Size(min = 10, max = 10)
-    private long accountNumber;
+    private Long accountNumber;
 
     @Column(name = "balance",nullable = false)
-    private long balance;
+    private Long balance;
 }
