@@ -22,12 +22,14 @@ public class AccountTypeServiceImp implements AccountTypeService {
     }
 
     @Override
-    public void deleteAccountType(Long accountTypeId) {
+    public void deleteAccountTypeId(Long accountTypeId) {
         this.accountTypeRepository.deleteById(accountTypeId);
     }
 
     @Override
-    public AccountType updateAccountType(AccountType accountType) {
+    public AccountType updateAccountType(Long accountTypeId,AccountType accountType) {
+        AccountType updateAccountType= this.accountTypeRepository.findById(accountTypeId).orElseThrow();
+        updateAccountType.setAccountType(accountType.getAccountType());
         return this.accountTypeRepository.save(accountType);
     }
 

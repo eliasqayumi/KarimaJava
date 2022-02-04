@@ -15,17 +15,14 @@ public class Account {
     @Id
     @Column(name = "account_id", nullable = false)
     private Long accountId;
-
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customerId;
-
     @ManyToOne
     @JoinColumn(name = "account_type")
     private AccountType accountType;
 
     @Column(name = "account_number", nullable = false)
-    @Size(min = 10, max = 10)
     private Long accountNumber;
 
     @Column(name = "balance",nullable = false)

@@ -27,8 +27,13 @@ public class CustomerServiceImp implements CustomerService {
     }
 
     @Override
-    public Customer updateCustomer(Customer customer) {
-        return this.customerRepository.save(customer);
+    public Customer updateCustomer(Long customerId, Customer customer) {
+        Customer updateCustomer = this.customerRepository.findByCustomerId(customerId).orElseThrow();
+        updateCustomer.setName(customer.getName());
+        updateCustomer.setLastname(customer.getLastname());
+        updateCustomer.setContact(customer.getContact());
+        updateCustomer.setEmail(customer.getEmail());
+        return this.customerRepository.save(updateCustomer);
     }
 
     @Override

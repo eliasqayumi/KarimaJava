@@ -15,7 +15,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Customer {
     @Id
-    @GeneratedValue
     @Column(name = "customer_id")
     private Long customerId;
     @Column(name = "name", nullable = false, length = 30)

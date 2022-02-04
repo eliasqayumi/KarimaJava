@@ -22,7 +22,12 @@ public class AccountServiceImp implements AccountService {
     }
 
     @Override
-    public Account updateAccount(Account account) {
+    public Account updateAccount(Long accountId,Account account) {
+        Account updateAccount= this.accountRepository.findByAccountId(accountId).orElseThrow();
+        updateAccount.setCustomerId(account.getCustomerId());
+        updateAccount.setAccountType(account.getAccountType());
+        updateAccount.setAccountNumber(account.getAccountNumber());
+        updateAccount.setBalance(account.getBalance());
         return this.accountRepository.save(account);
     }
 
